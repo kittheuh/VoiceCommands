@@ -1,5 +1,6 @@
 package io.github.kittheuh.voicecmd.client;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import io.github.kittheuh.voicecmd.VoiceCommands;
 import io.github.kittheuh.voicecmd.client.config.MenuValues;
 import io.github.kittheuh.voicecmd.client.config.VoiceConfig;
@@ -10,7 +11,6 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.StringUtil;
-import org.lwjgl.glfw.GLFW;
 
 public class VoiceMenuManager {
     private VoiceMenu activeMenu = null;
@@ -26,9 +26,9 @@ public class VoiceMenuManager {
                 Identifier.fromNamespaceAndPath(VoiceCommands.MOD_ID, "menus")
         );
 
-        menu1 = new VoiceMenu("menu1", GLFW.GLFW_KEY_Z, menuCategory, VoiceConfig.configMenuValues(0));
-        menu2 = new VoiceMenu("menu2", GLFW.GLFW_KEY_X, menuCategory, VoiceConfig.configMenuValues(1));
-        menu3 = new VoiceMenu("menu3", GLFW.GLFW_KEY_C, menuCategory, VoiceConfig.configMenuValues(2));
+        menu1 = new VoiceMenu("menu1", InputConstants.KEY_Z, menuCategory, VoiceConfig.configMenuValues(0));
+        menu2 = new VoiceMenu("menu2", InputConstants.KEY_X, menuCategory, VoiceConfig.configMenuValues(1));
+        menu3 = new VoiceMenu("menu3", InputConstants.KEY_C, menuCategory, VoiceConfig.configMenuValues(2));
     }
 
     public KeyMapping.Category menuCategory() {

@@ -32,7 +32,7 @@ public class VoiceMenu implements HudElement {
         this.values = values;
 
         keyMapping = KeyMappingHelper.registerKeyMapping(
-                new KeyMapping("key.%s.%s".formatted(VoiceCommands.MOD_ID, suffix), InputConstants.Type.KEYSYM, keycode, category)
+                new KeyMapping("key.%s.%s".formatted(VoiceCommands.MOD_ID, suffix), InputConstants.Type.KEYBOARD, keycode, category)
         );
         HudElementRegistry.addFirst(Identifier.fromNamespaceAndPath(VoiceCommands.MOD_ID, suffix), this);
     }
